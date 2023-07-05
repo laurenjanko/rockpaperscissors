@@ -24,13 +24,14 @@ def tie():
     print("Computer and you selected the same thing!")
     print("Please select again")
     print(menu)
-    selection_process(input())
+    selection_process(int(input()))
 
 def win():
     global player_points, computer_points
     print("You beat the computer!")
     player_points = player_points + 1
-    print(player_points)
+    print("Computer Points: ", computer_points)
+    print("User points: ", player_points)
     if player_points == 3:
         print("Thanks for playing you win!")
         exit()
@@ -42,8 +43,8 @@ def lose():
     global player_points, computer_points
     print("The computer beat you!")
     computer_points = computer_points + 1
-    print("Computer Points: %", computer_points)
-    print("User points: % ", player_points)
+    print("Computer Points: ", computer_points)
+    print("User points: ", player_points)
     if computer_points == 3:
         print("You lose! To play again press 1. To quit press 2")
         play_again = input()
@@ -53,7 +54,7 @@ def lose():
             computer_points == 0
             print("")
             print(menu)
-            selection_process(input())
+            selection_process(int(input()))
         if play_again == 2:
             print("Thanks for playing!")
             exit()
